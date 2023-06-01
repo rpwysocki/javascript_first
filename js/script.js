@@ -12,7 +12,7 @@ var combined = [];
 
 //Confirm specials and numbers as well
 
-
+// hello world
 
 
 function responses(){
