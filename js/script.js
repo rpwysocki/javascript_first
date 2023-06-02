@@ -15,14 +15,14 @@ var combined = [];
 // hello world
 
 
-function responses(){
+function responses() {
         var amount = Number(prompt('Please provide an amount characters.'));
-        var includeLowercase = confirm ('Click OK to include lowercase letters');
-        var includeUppercase = confirm ('Click OK to include uppercase letters');
-        var includeNumbers = confirm ('Click OK to include lowercase numbers');
-        var includeSpecial = confirm ('Click OK to include special characters');
+        var includeLowercase = confirm('Click OK to include lowercase letters');
+        var includeUppercase = confirm('Click OK to include uppercase letters');
+        var includeNumbers = confirm('Click OK to include lowercase numbers');
+        var includeSpecial = confirm('Click OK to include special characters');
         console.log(amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial);
-        return{amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial};
+        return { amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial };
 }
 
 var selections = [responses()];
@@ -42,30 +42,37 @@ function generatePass() {
         var includeSpecial = choices[4]
 
 
-        for (var index = 0; index < amount; index ++ ){
-
+        if (includeLowercase) {
+                combinedChars = combinedChars.concat(lowercase)
         }
-        
+
+        if (includeUppercase) {
+                combinedChars = combinedChars.concat(uppercase)
+        }
+
+        if (includeNumbers) {
+                combinedChars = combinedChars.concat(numbers)
+        }
+
+        if (includeSpecial) {
+                combinedChars = combinedChars.concat(specialCharacters)
+        }
+        for (var count = 0; count < choices[0]; count++) {
+                var randomIndex = Math.floor(Math.random() * combinedChars.length);
+
+                password += combinedChars[randomIndex];
+        }
+
 }
 
 
-if (includeLowercase) {
-        combined=combined.concat(lowercase)
-}
 
-if (includeUppercase)  {
-        combined=combined.concat(uppercase)
-}
 
-if (includeNumbers)  {
-        combined=combined.concat(numbers)
-}
 
-if (includeSpecial)  {
-        combined=combined.concat(specialCharacters)
-}
 
-console.log
+
+
+// console.log
 
 
 alert('Thank you for your input')
