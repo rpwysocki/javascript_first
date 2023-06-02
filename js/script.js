@@ -4,7 +4,7 @@ var uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', ':', ';', '<', '>', '.', '?', '/'];
 
-var combined = [];
+
 
 
 
@@ -26,24 +26,30 @@ function getUserInput() {
 
         console.log(amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial);
 
-        return { amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial };
+        return [amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial];
 }
 
 // var choices = [getUserInput()];
 // console.log(choices);
-
+// getUserInput()
 var choices = getUserInput();
 
+// Generate a random password
+// functions, conditionals, variables, for loops, concatenation (+ & +=), .concat
 
+// user input, return a var, math
 
 function generatePass() {
-        var combinedChars = [];
-        var password = '';
 
-        var includeLowercase = choices[1]
-        var includeUppercase = choices[2]
-        var includeNumbers = choices[3]
-        var includeSpecial = choices[4]
+        // var combinedChars = [];
+        var pass = '';
+
+        var includeLowercase = choices[1];
+        var includeUppercase = choices[2];
+        var includeNumbers = choices[3];
+        var includeSpecial = choices[4];
+        // var count = choices[0];
+        var combinedChars = [];
 
 
         if (includeLowercase) {
@@ -61,12 +67,26 @@ function generatePass() {
         if (includeSpecial) {
                 combinedChars = combinedChars.concat(specialCharacters)
         }
-        for (var count = 0; count < choices[0]; count++) {
-                var randomIndex = Math.floor(Math.random() * combinedChars.length);
+        console.log(combinedChars)
 
-                password += combinedChars[randomIndex];
+
+        
+        
+        for (var count = 0; count < choices[0]; count++) {
+                var randomNum = Math.random();
+                var randomIndex = Math.floor(randomNum * combinedChars.length);
+                var randomChar = combinedChars[randomIndex]
+                
+                pass += randomChar;
+
         }
 
+        return pass;
+
+        var password = generatePass()
+
+        console.log(password)
+        // what's missing here?
 }
 
 
@@ -76,10 +96,9 @@ function generatePass() {
 
 
 
-// console.log
 
 
-alert('Thank you for your input')
+        alert('Thank you for your input')
 
 // function sum(a, b){
 //         return a + b;
