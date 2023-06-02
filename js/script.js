@@ -15,18 +15,22 @@ var combined = [];
 // hello world
 
 
-function responses() {
+function getUserInput() {
+
         var amount = Number(prompt('Please provide an amount characters.'));
+
         var includeLowercase = confirm('Click OK to include lowercase letters');
         var includeUppercase = confirm('Click OK to include uppercase letters');
         var includeNumbers = confirm('Click OK to include lowercase numbers');
         var includeSpecial = confirm('Click OK to include special characters');
+
         console.log(amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial);
+
         return { amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial };
 }
 
-var selections = [responses()];
-console.log(selections);
+// var choices = [getUserInput()];
+// console.log(choices);
 
 var choices = getUserInput();
 
