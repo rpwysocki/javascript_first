@@ -42,53 +42,50 @@ var choices = getUserInput();
 function generatePass() {
 
         // var combinedChars = [];
-        var pass = '';
+        var password = '';
 
+        var charAmount = choices[0]
         var includeLowercase = choices[1];
         var includeUppercase = choices[2];
         var includeNumbers = choices[3];
         var includeSpecial = choices[4];
-        // var count = choices[0];
         var combinedChars = [];
 
-
         if (includeLowercase) {
-                combinedChars = combinedChars.concat(lowercase)
+                combinedChars = combinedChars.concat(lowercase);
         }
 
         if (includeUppercase) {
-                combinedChars = combinedChars.concat(uppercase)
+                combinedChars = combinedChars.concat(uppercase);
         }
 
         if (includeNumbers) {
-                combinedChars = combinedChars.concat(numbers)
+                combinedChars = combinedChars.concat(numbers);
         }
 
         if (includeSpecial) {
-                combinedChars = combinedChars.concat(specialCharacters)
+                combinedChars = combinedChars.concat(specialCharacters);
         }
-        console.log(combinedChars)
+        console.log(combinedChars);
 
-
-        
-        
-        for (var count = 0; count < choices[0]; count++) {
-                var randomNum = Math.random();
-                var randomIndex = Math.floor(randomNum * combinedChars.length);
-                var randomChar = combinedChars[randomIndex]
-                
-                pass += randomChar;
-
-        }
-
-        return pass;
-
-        var password = generatePass()
-
-        console.log(password)
-        // what's missing here?
 }
 
+for (var count = 0; count < choices[0]; count++) {
+        var randomNum = Math.random();
+        var randomIndex = Math.floor(randomNum * combinedChars.length);
+        var randomChar = combinedChars[randomIndex];
+
+        // pass += randomChar;
+}
+
+// return password;
+
+generatePass();
+
+// var password = generatePass();
+
+// console.log(pass);
+// what's missing here?
 
 
 
@@ -98,11 +95,7 @@ function generatePass() {
 
 
 
-        alert('Thank you for your input')
 
-// function sum(a, b){
-//         return a + b;
-// }
 
-// var result = sum(5, 10);
-// console.log(result);
+alert('Thank you for your input');
+
