@@ -89,14 +89,43 @@ console.log(password);
 // what's missing here?
 
 
-
-
-
-
-
-
-
-
-
 alert('Thank you for your input');
 
+// Need to limit numbers at input and a zero entry
+// Need to account for all false returns
+
+
+
+
+// function limitNumberInput() {
+//         var numberInput = document.getElementById('numberInput');
+//         var inputValue = parseInt(numberInput.value);
+        
+//         // Define the minimum and maximum values
+//         var minLimit = 1;
+//         var maxLimit = 100;
+        
+//         // Check if the input value is outside the limits
+//         if (inputValue < minLimit) {
+//           numberInput.value = minLimit;
+//         } else if (inputValue > maxLimit) {
+//           numberInput.value = maxLimit;
+//         }
+//       }
+
+
+
+// function queryAllFalse() {
+//         var condition1 = false;
+//         var condition2 = false;
+//         var condition3 = false;
+        
+//         // Perform the query
+//         var queryResult = condition1 && condition2 && condition3;
+        
+//         return queryResult;
+//       }
+      
+//       var result = queryAllFalse();
+//       console.log(result); // Outputs: true
+      
