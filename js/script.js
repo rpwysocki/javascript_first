@@ -21,7 +21,7 @@ function getUserInput() {
 
         var includeLowercase = confirm('Click OK to include lowercase letters');
         var includeUppercase = confirm('Click OK to include uppercase letters');
-        var includeNumbers = confirm('Click OK to include lowercase numbers');
+        var includeNumbers = confirm('Click OK to include numbers');
         var includeSpecial = confirm('Click OK to include special characters');
 
         console.log(amount, includeLowercase, includeUppercase, includeNumbers, includeSpecial);
@@ -42,9 +42,9 @@ var choices = getUserInput();
 function generatePass() {
 
         // var combinedChars = [];
-        var password = '';
+        var pass = '';
 
-        var charAmount = choices[0]
+        var charAmount = choices[0];
         var includeLowercase = choices[1];
         var includeUppercase = choices[2];
         var includeNumbers = choices[3];
@@ -68,23 +68,24 @@ function generatePass() {
         }
         console.log(combinedChars);
 
-}
 
-for (var count = 0; count < choices[0]; count++) {
+
+for (var count = 0; count < charAmount; count++) {
         var randomNum = Math.random();
         var randomIndex = Math.floor(randomNum * combinedChars.length);
         var randomChar = combinedChars[randomIndex];
 
-        // pass += randomChar;
+        pass += randomChar;
 }
 
-// return password;
+return pass;
+}
 
-generatePass();
+// generatePass();
 
-// var password = generatePass();
+var password = generatePass();
 
-// console.log(pass);
+console.log(password);
 // what's missing here?
 
 
